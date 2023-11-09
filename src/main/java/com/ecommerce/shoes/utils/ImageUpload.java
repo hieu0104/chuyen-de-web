@@ -5,13 +5,15 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 @Component
 public class ImageUpload {
-    private final String UPLOAD_FOLDER = "C:\\Users\\lechi\\OneDrive\\Máy tính\\Chuyen-de-web-master\\src\\main\\resources\\static\\image\\article\\pictures";
+   // private final String UPLOAD_FOLDER = "C:\\Users\\lechi\\OneDrive\\Máy tính\\Chuyen-de-web-master\\src\\main\\resources\\static\\image\\article\\pictures";
 
+    String UPLOAD_FOLDER = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\image\\article\\pictures";
     public boolean uploadImage(MultipartFile imageProduct){
         boolean isUpload = false;
         try {
